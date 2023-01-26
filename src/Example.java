@@ -4,24 +4,28 @@ import java.util.Scanner;
 
 public class Example {
       public static void main(String[] args) {
-            int result = divide();
-            System.out.println(result);
+            try {
+                  int result = divide();
+                  System.out.println(result);
+            } catch(ArithmeticException |NoSuchElementException  g)
+            {
+                  System.out.println(g.toString());
+                  System.out.println("Unable to preform operations.");
+            }
       }
       private static int divide(){
             int x, y;
-            try {
+//            try {
                   x =getInt();
                   y =getInt();
-            } catch(NoSuchElementException e) {
-                  throw new ArithmeticException("No suitable input");
-            }
-
-            System.out.println("x: " + x + " y: " + y);
-            try{
+                  System.out.println("x: " + x + " y: " + y);
                   return x/y;
-            } catch(ArithmeticException e) {
-                  throw new ArithmeticException("Attempted to divide by 0");
-            }
+//            } catch(NoSuchElementException e) {
+//                  throw new ArithmeticException("No suitable input");
+//            } catch(ArithmeticException g) {
+//                  throw new ArithmeticException("Attempted to divide by 0");
+//            }
+
 
       }
       private static int getInt() {
